@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-Project</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="main">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo13jPEtlQbdGFRtLW3TgDKQRqAnsoe-QLUQ&s" alt="logo">
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#carousel">Home</a></li>
+          <li><a href="#container">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <button id="theme-toggle"><i class="fas fa-adjust"></i></button>
+    </nav>
+
+    <section id="carousel">
+      <div class="carousel-inner">
+        <img class="carousel-item" src="image2.jpg" alt="Image 2">
+        <img class="carousel-item" src="image3.jpg" alt="Image 3">
+        <img class="carousel-item" src="image4.jpg" alt="Image 4">
+      </div>
+      <button class="carousel-control prev" onclick="showPreviousImage()">&#10094;</button>
+      <button class="carousel-control next" onclick="showNextImage()">&#10095;</button>
+    </section>
+  </div>
+
+  <div class="container" id="container">
+    <div class="card-container">
+      <article class="card-article">
+        <img src="image6.jpg" alt="image" class="card-img">
+        <div class="card-data">
+          <span class="card-description">This image features a chic, modern fireplace setup in a living space.</span>
+          <h2 class="card-title"> "Chic Modern Fireplace Design"</h2>
+          <a href="#" class="card-button">Read More</a>
+        </div>
+      </article>
+      <article class="card-article">
+        <img src="image7.jpg" alt="image" class="card-img">
+        <div class="card-data">
+          <span class="card-description"> This image showcases a modern bathroom with a sleek and minimalist design. </span>
+          <h2 class="card-title">"Elegant Bathroom Design"</h2>
+          <a href="#" class="card-button">Read More</a>
+        </div>
+      </article>
+      <article class="card-article">
+        <img src="image8.jpg" alt="image" class="card-img">
+        <div class="card-data">
+          <span class="card-description"> This image displays a contemporary kitchen with a clean and open layout. </span>
+          <h2 class="card-title"> "Contemporary Kitchen Setup"
+          </h2>
+          <a href="#" class="card-button">Read More</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Your Name. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

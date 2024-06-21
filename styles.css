@@ -1,0 +1,286 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b1bcc8;
+  transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 50px; /* Adjust this value as needed */
+}
+
+body.light-theme {
+  background-color: #586674;
+  color: black;
+}
+
+body.dark-theme {
+  background-color: #192c3e;
+  color: white;
+}
+
+.main {
+  height: 550px;
+  width: 1000px;
+  background-color: white;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 60px;
+  width: 60px;
+  margin-top: 10px;
+  margin-left: 0.22px;
+ 
+}
+
+.nav-links ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
+  color: rgb(64, 63, 63);
+  box-shadow: 5px 5px 5px rgb(202, 198, 198);
+}
+
+#theme-toggle {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: #555;
+}
+
+#carousel {
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  width: 900px;
+  margin: 20px auto;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 1s;
+}
+
+.carousel-item {
+  min-width: 100%;
+  height: 450px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-control.prev {
+  left: 5px;
+}
+
+.carousel-control.next {
+  right: 5px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+.card-container {
+  display: grid;
+  row-gap: 3.5rem;
+}
+
+.card-article {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img {
+  height: 500px;
+  width: 300px;
+  border-radius: 1.5rem;
+}
+
+.card-data {
+  width: 280px;
+  background-color: rgb(216, 215, 215);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card-description {
+  display: block;
+  font-size: small;
+  margin-bottom: .25rem;
+}
+
+.card-title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: rgb(8, 14, 53);
+  margin-bottom: .75rem;
+}
+
+.card-button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card-button:hover {
+  text-decoration: underline;
+}
+
+.card-article:hover .card-data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card-article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card-article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card-article:not(:hover) .card-data {
+  animation: remove-data 2s forwards;
+}
+
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+
+  50% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+footer {
+  text-align: center;
+  /* padding: 20px 0 30px 0; Increased bottom padding */
+  background-color: #333;
+  color: white;
+  /* position: fixed; */
+  width: 100%;
+
+ margin-top:120px;
+}
+
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card-data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+  }
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-img {
+    width: 348px;
+  }
+
+  .card-data {
+    width: 316px;
+    padding-inline: 2.5rem;
+  }
+}
